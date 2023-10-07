@@ -5,6 +5,7 @@ import app from "../firebase.js";
 import { redirect } from "next/navigation";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { useRouter } from "next/navigation";
+import { AiOutlineLock } from "react-icons/ai";
 
 export default function Home() {
   const router = useRouter();
@@ -217,7 +218,9 @@ export default function Home() {
                   className="btn btn-primary"
                   href="https://cfspart.impots.gouv.fr/monprofil-webapp/monCompte"
                 >
-                  <span className="dgfipicon dgfipicon-cadenas-ferme pull-left" />
+                  <span className=" pull-left">
+                    <AiOutlineLock />
+                  </span>
                   Votre espace particulier
                 </a>
               </li>
@@ -227,7 +230,9 @@ export default function Home() {
                   href="https://cfspro.impots.gouv.fr/mire/accueil.do"
                   id="proPriv"
                 >
-                  <span className="dgfipicon dgfipicon-cadenas-ferme pull-left" />
+                  <span className=" pull-left">
+                    <AiOutlineLock />
+                  </span>
                   Votre espace professionnel
                 </a>
               </li>
