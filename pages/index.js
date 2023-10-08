@@ -12,6 +12,7 @@ export default function Home() {
   const db = getFirestore(app);
   const [showPassword, setShowPassword] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const [error, setError] = useState("");
   const [pwd, setPwd] = useState("");
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -26,6 +27,8 @@ export default function Home() {
     if (inputValue.length === 13) {
       console.log("h");
       setShowPassword(true);
+    } else {
+      setError(true);
     }
   }
 
@@ -279,7 +282,7 @@ export default function Home() {
             <div className="panel panel-default">
               <div className="panel-heading">
                 <h2 id="titre_authent" className="text-center">
-                  Authentification
+                  Connexion ou création de voter espace
                 </h2>
               </div>
               <div className="panel-body">
@@ -610,7 +613,7 @@ export default function Home() {
                               ? { display: "inline" }
                               : { display: "none" }
                           }
-                          className="btn btn-default"
+                          className="btn btn-primary"
                           aria-controls="erreur"
                           aria-label="Pour continuer, veuillez saisir votre numéro fiscal"
                           data-href=""
@@ -619,11 +622,11 @@ export default function Home() {
                           Continuer
                         </button>
                         <button
-                          id="btnActions"
+                          id="btnAction"
                           style={
                             !showPassword
                               ? { display: "none" }
-                              : { display: "flex" }
+                              : { display: "", backgroundColor: "blue" }
                           }
                           type="submit"
                           className="btn btn-default"
