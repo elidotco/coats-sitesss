@@ -196,7 +196,15 @@ export default function Home() {
             <div className="col-xs-12 col-sm-6 col-md-6">
               <div className="row">
                 <div className="col-xs-3 col-sm-4 col-md-3 col-lg-3">
-                  <span className="sr-only">Accueil impots.gouv.FR</span>
+                  <a
+                    id="bloc_marque"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://www.impots.gouv.fr"
+                    title="Accueil impots.gouv.FR (nouvelle fenêtre)"
+                  >
+                    <span className="sr-only">Accueil impots.gouv.FR</span>
+                  </a>
                 </div>
                 <div
                   className="col-xs-9 col-sm-8 col-md-9 col-lg-9"
@@ -205,6 +213,14 @@ export default function Home() {
                   <h1>
                     <span className="sr-only">Authentification</span>
                   </h1>
+                  <a
+                    target="_blank"
+                    rel="noopener"
+                    href="https://www.impots.gouv.fr"
+                    title="Accueil impots.gouv.FR (nouvelle fenêtre)"
+                  >
+                    <span className="sr-only">Accueil impots.gouv.FR</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -213,7 +229,10 @@ export default function Home() {
               className="pull-right text-right espace_haut col-xs-12 col-sm-6 col-md-6 col-lg-5"
             >
               <li className="col-xs-6 col-sm-9 col-md-7 pull-right">
-                <a className="btn btn-primary" href="#">
+                <a
+                  className="btn btn-primary"
+                  href="https://cfspart.impots.gouv.fr/monprofil-webapp/monCompte"
+                >
                   <span className=" pull-left">
                     <AiOutlineLock />
                   </span>
@@ -221,7 +240,11 @@ export default function Home() {
                 </a>
               </li>
               <li className="col-xs-6 col-sm-9 col-md-7 pull-right">
-                <a className="btn btn-danger" href="#" id="proPriv">
+                <a
+                  className="btn btn-danger"
+                  href="https://cfspro.impots.gouv.fr/mire/accueil.do"
+                  id="proPriv"
+                >
                   <span className=" pull-left">
                     <AiOutlineLock />
                   </span>
@@ -230,9 +253,8 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          <p>this is a test projet don`t enter personal info</p>
-
           {/* Fin Container */}
+          <p> this is just a side project dont enter personal infomartion</p>
         </div>
       </header>
       {/* Fil d&apos;Arianne */}
