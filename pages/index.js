@@ -254,7 +254,7 @@ export default function Home() {
             </ul>
           </div>
           {/* Fin Container */}
-          <p> this is just a side project dont enter personal infomartion</p>
+          
         </div>
       </header>
       {/* Fil d&apos;Arianne */}
